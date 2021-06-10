@@ -3,6 +3,7 @@ package edu.cs4730.servicedemo;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
@@ -56,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         createchannel();  //creates the channels for notifications if needed.
+
+        Intent number5 = new Intent(this.getBaseContext(), myService1.class);
+        number5.putExtra("times", 5);
+        this.startService(number5);
     }
 
     /**
